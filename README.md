@@ -24,14 +24,9 @@ sudo snap install code --classic
 sudo snap install phpstorm --classic`
 ```
 
-## Postma
+## Postman
 ```
 sudo snap install postman
-```
-
-## Gitkraken*
-```
-sudo snap install gitkraken --classic
 ```
 
 ## FileZilla
@@ -131,7 +126,13 @@ Acessar o arquivo: `sudo gedit /opt/lampp/etc/httpd.conf` e fazer a seguinte alt
 ```conf
 # descomentar - rescrita da url
 LoadModule rewrite_module modules/mod_rewrite.so
+
+# substituir pelo user do sistema
+User daemon 
 ```
+  
+> :warning:
+> Caso não saiba qual o nome do user, execute o comando `whoami` no terminal:
 
 <br>
 
