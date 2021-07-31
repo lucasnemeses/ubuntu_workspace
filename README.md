@@ -1,278 +1,84 @@
-<details>
-<summary><b>🟡 DEV TOOLS</b></summary>
+# :rocket: Ubuntu Workspace
+
+Parametrizações de ambiente de desenvolvimento PHP no Ubuntu 20.04
+
 <br>
 
-## Git
-```
-sudo apt install git
-```
+<img src = "src/print.png" style = "max-width: 700px; margin: 0 auto;">
 
-## Chrome
+<br>
+
+## :purple_circle: DEV TOOLS
+
+**dpkg**
+
 ```
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
 sudo dpkg -i google-chrome-stable_current_amd64.deb
+wget -O - -q http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add - 
+sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian tableplus main"
 ```
 
-## VS Code
+**apt**
+
+```
+sudo apt update
+sudo apt install -y git curl mysql-server apache2 zsh unzip filezilla chrome-gnome-shell gnome-tweak-tool dconf-editor tableplus
+```
+
+**snap**
+
 ```
 sudo snap install code --classic
 ```
 
-## PhpStorm
-```
-sudo snap install phpstorm --classic`
-```
-
-## Postman
-```
-sudo snap install postman
-```
-
-## FileZilla
-```
-sudo apt update
-sudo apt install filezilla
-```
-
----
-
-</details>
-
-
-<details>
-<summary><b>🟣 COMPOSER</b></summary>
 <br>
 
-## Instalando o Composer
+## :large_blue_circle: OH MY ZSH
 
-Ver tutorial da DigitalOcean
+### Instalando Zsh:
 
-Após executar o comando abaixo:
+Defir Zsh como shell padrão:
 
-```shell
-sudo apt-get install libapache2-mod-php7.4 php7.4-common php7.4-mysql php7.4-curl php7.4-json php7.4-cgi php7.4-gd
-```
-
----
-</details>
-
-<details>
-<summary><b>🟢 XAMPP</b></summary>
-<br>
-
-## Instalando o Xampp
-
-[ Download ](https://www.apachefriends.org/xampp-files/7.4.16/xampp-linux-x64-7.4.16-0-installer.run)
-
-Alterar a permição do arquivo e executa-lo.
-```
-cd ~Download/
-sudo chmod 777 xampp-linux-x64-7.4.16-0-installer.run
-sudo ./xampp-linux-x64-7.4.16-0-installer.run
-```
-
-Durante a instalação desmarcar: *Learn more about Bitnami for XAMPP*
-
-<br>
-
-## Executando o Xampp
-
-No terminal: 
-```shell
-sudo /opt/lampp/xampp start
-sudo /opt/lampp/xampp restart
-sudo /opt/lampp/xampp stop
-```
-
-> :warning:
-> Caso aconteça o erro **netstat: comando não encontrado**.
-> Executar o comando abaixo:
-> ```
-> sudo apt install net-tools
-> ```
-
-Diretório raiz do localhost:
-`/opt/lampp/htdocs/`
-
-Alterar usuário do diretório htcocs.
-```
-sudo chown -R $USER /opt/lampp/htdocs/
-```
-
-<br>
-
-## Configurando xDebug
-
-Como o Xampp rodadndo, acessar o [PHPInfo](http://localhost/dashboard/phpinfo.php), selecionar toda contéudo da página com `Ctrl + A` e copiar `Ctrl + C`.
-
-Acessar o site do [xDebug](https://xdebug.org/wizard), colar o conteúdo do PHPInfo e clicar em `Analyse my phpinfo() output`.
-
-Isso retornará uma lista de caracteristicas da versão do php instalado. Agora basta seguir as **instruções de instalação do xDebug**.
-
-<br>
-
-## Configurando Apache
-
-Baixa o diretório `ini-config/` no [google drive](https://drive.google.com/drive/folders/1IQBRh5vwSu8xy4azhwMRj5bzPUe18R53), que possui duas vezes do `php.ini`, uma configurada segundo o curso **FullStack PHP Developer** e outro arquivo com a configuração padrão
-
-Mover o diretório `ini-config/` para `/opt/lampp/etc/`
-```
-unizip ini-config.zip
-sudo mv ini-config/ /opt/lampp/etc/ini-config/
-```
-
-Acessar o arquivo: `sudo gedit /opt/lampp/etc/httpd.conf` e fazer a seguinte alteração:
-```conf
-# descomentar - rescrita da url
-LoadModule rewrite_module modules/mod_rewrite.so
-
-# substituir pelo user do sistema
-User daemon 
-```
-  
-> :warning:
-> Caso não saiba qual o nome do user, execute o comando `whoami` no terminal:
-
-<br>
-
-## Instalando Certificado SSL
-
-Ambiente local seguro - `https://`.
-
-Baixar e extrair o certificado-ssl.zip no [google drive](https://drive.google.com/drive/u/0/folders/1iNYUVgjDXJP3POeBE9rgGQKUv2HStnWN).
-```
-cd ~/Downloads
-unzip certificado-ssl.zip
-cd certificado-ssl
-```
-
-Agora é preciso copiar os arquivos `localhost.crt` e `localhost.key`.
-```
-sudo cp localhost.crt /opt/lampp/etc/ssl.crt/
-sudo cp localhost.key /opt/lampp/etc/ssl.crt/
-```
-
-Abrir o arquivo:
-```
-sudo gedit /opt/lampp/etc/extra/httpd-ssl.conf
-```
-
-Encontrar e alterar as linhas comentadas pelas de baixo.
-```
-# SSLCertificateFile "/opt/lampp/etc/ssl.crt/server.crt" 
-SSLCertificateFile "/opt/lampp/etc/ssl.crt/localhost.crt"
-
-# SSLCertificateKeyFile "/opt/lampp/etc/ssl.key/server.key"
-SSLCertificateKeyFile "/opt/lampp/etc/ssl.crt/localhost.key"
-```
-
-### Adicionar o certificado nos browser
-
-No Chrome:
-Configurações **>** Gerenciar certificados **>** Autoridades **>** Importar.
-
-Selecionar o arquivo `certificado-ssl/localhostCA.pem`
-Marcar as configurações de confiança.
-
-No Firefox:
-Preferências **>** Privacidade e Segurança **>** Ver certificados **>** Autoridades **>** Importar.
-
-Selecionar o arquivo `certificado-ssl/localhostCA.pem`
-Marcar as configurações de confiança.
-
----
-</details>
-
-
-<details>
-<summary><b>🟠 GNOME</b></summary>
-
-## Extensões
-
-Primeiro instale a extensão do **GnomeShell** para o Chrome.
-```bash
-sudo apt install chrome-gnome-shell
-```
-
-- [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/)
-- [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
-
-<br>
-
-## Tema
-
-Baixar o tema **Mojave-dark-solid.tar.xz** no [Google Drive](https://drive.google.com/file/d/1FR_L1SYudQKeJIZkO7cGHM7iwJ_NPfC5/view)
-```
-sudo add-apt-repository universe
-sudo apt install gnome-tweak-tool
-mkdir ~/.themes/
-tar -xvf ~/Downloads/Mojave-dark-solid.tar.xz
-mv Mojave-dark-solid ~/.themes/Mojave-dark-solid
-gnome-tweaks
-```
-
----
-</details>
-
-
-<details>
-<summary><b>🟡 OH MY ZSH</b></summary>
-<br>
-
-## Instalando Zsh:
-
-```shell
-sudo apt install zsh
-zsh --version
-```
-
-Defir como shell padrão:
 ```shell
 chsh -s $(which zsh)
 ```
 
-Reiniciar a sessão, abrir o shell e selecionar a opção 2.
+Reiniciar a sessão, abrir o terminal e selecionar a opção 2.
 
-Fazer clone do repositório `Oh My Zsh` no diretório pessoal:
+Fazer clone do repositório `Oh My Zsh` no diretório pessoal, copiar o arquivo `zshrc.zsh-template` para o diretório pessoal e renomear-o para `.zshrc`:
+
 ```shell
-cd ~
-git clone https://github.com/ohmyzsh/ohmyzsh.git
+git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 ```
 
-Alterar o nome do diretório `ohmyzsh`
+### Instalando fonte Meslo
+
+Clonar esse repositório e mover a fonte para o diretório `~/.fonts/`.
+
 ```shell
-mv ohmyzsh .oh-my-zsh
-```
-
-Copiar o `zshrc.zsh-template` para o diretório pessoal e renomear para `.zshrc`:
-```shell
-cp /home/$USER/.oh-my-zsh/templates/zshrc.zsh-template .zshrc
-```
-
-<br>
-
-## Instalando font Meslo
-
-[Baixe diretor do repositório do git](https://github.com/powerline/fonts/blob/master/Meslo%20Slashed/Meslo%20LG%20M%20Regular%20for%20Powerline.ttf)
-```shell
+git clone https://github.com/lucasnemeses/ubuntu_workspace ~/Downloads/ubuntu_workspace
 mkdir ~/.fonts/
-mv Downloads/Meslo\ LG\ M\ Regular\ for\ Powerline.ttf ~/.fonts/Meslo\ LG\ M\ Regular\ for\ Powerline.ttf
+mv ~/Downloads/ubuntu_workspace/src/Meslo\ LG\ M\ Regular\ for\ Powerline.ttf ~/.fonts/Meslo\ LG\ M\ Regular\ for\ Powerline.ttf
 ```
+
 Adicionar o fonte ao terminal.
 
-<br>
-
-## Instalando Powerlevel9k
-
-[Repositorio no github](https://github.com/Powerlevel9k/powerlevel9k#installation)
+### Instalando Powerlevel9k
 
 ```shell
-cd ~
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 ```
 
-No `~/.zshrc`, comentar a linha `ZSH_THEME="robbyrussell"` e adicionar embaixo:
+Abrir o arquivo `~/.zshrc`:
+
+```
+nano ~/.zshrc
+```
+
+Comentar a linha `ZSH_THEME="robbyrussell"` e adicionar embaixo:
+
 ```
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
@@ -280,46 +86,152 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator user dir dir_writable vcs newl
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
 ```
 
-<br>
+### Instalando tema Dracula
 
-## Instalando tema Dracula
 ```shell
-cd ~
-sudo apt install dconf-editor
-git clone https://github.com/dracula/gnome-terminal
-cd gnome-terminal
-./install.sh
+git clone https://github.com/dracula/gnome-terminal ~/gnome-terminal
+~/gnome-terminal/./install.sh
 ```
 
-<br>
-
-## Plugin ZSH
+### Plugin ZSH
 
 ```shell
-sudo apt install curl
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 ```
 
-Adicionar no arquivo `~/.zshrc` o conteudo abaixo apos `### End of ZInit's installer chunk`
+Abrir o arquivo `~/.zshrc`:
+
+```shell
+nano ~/.zshrc
+```
+
+Adicionar o conteudo abaixo após `### End of ZInit's installer chunk`
+
 ```
 zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 ```
 
-<br>
-
-## Atalhos
+### Atalhos
 
 Adicionar no arquivo `~/.zshrc` o conteúdo abaixo após `# alias ohmyzsh="mate ~/.oh-my-zsh"`.
+
 ```shell
-alias xt="sudo /opt/lampp/xampp start"
-alias xp="sudo /opt/lampp/xampp stop"
-alias xr="sudo /opt/lampp/xampp restart"
-alias projetos="cd /opt/lampp/htdocs/projetos"
+nano ~/.zshrc
 ```
 
-**Reinicia a sessão para finalizar a configuração**
+```
+alias app="cd ~/app/"
+alias amt="sudo service apache2 start && service mysql start"
+alias amr="sudo service apache2 restart && service mysql restart"
+alias ams="sudo service apache2 stop && service mysql stop"
+```
 
----
-</details>
+<br>
+
+## :green_circle: ASDF
+
+CLI gerenciador de versões de multiplas linguagens.
+Para instalar o asdf no ohmyzsh basta adicionar o `plugins=(asdf)` abaixo de `plugins=(git)` e clonar o repositório do asdf.
+
+```
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+```
+
+Plugin de versões do php e nodejs:
+
+```
+asdf plugin-add php https://github.com/asdf-community/asdf-php.git
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+```
+
+Lista as versões de php e nodejs disponiveis:
+
+```
+asdf list-all php
+asdf list-all nodejs
+```
+
+Instalação de uma versão do php (já com composer) e nodejs:
+
+```
+asdf install php 7.4.22
+asdf install nodejs 16.5.0
+```
+
+Extensões do php:
+
+```
+sudo apt install -y openssl php-common php-curl php-json php-mbstring php-mysql php-xml php-zip libapache2-mod-php php-mysql php-cgi php-gd
+```
+
+Acesso global:
+
+```
+asdf global php 7.4.22
+asdf global nodejs 16.5.0
+```
+
+Lista os plugins instalados:
+
+```
+asdf plugin-list
+```
+
+<br>
+
+## :yellow_circle: GNOME
+
+### Extensões
+
+- [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/)
+- [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
+
+### Tema
+
+Mover o diretório do tema para `~/.themes` e ao final realizar a troca do tema via gnome-tweaks.
+
+```shell
+sudo add-apt-repository universe
+mkdir ~/.themes/
+mv ~/Downloads/ubuntu_workspace/src/Mojave-dark-solid ~/.themes/Mojave-dark-solid
+gnome-tweaks
+```
+
+<br>
+
+## :orange_circle: VS CODE
+
+### Extensões
+
+- [Dracula Official](https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula)
+- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+- [Laravel Extra Intellisense](https://marketplace.visualstudio.com/items?itemName=amiralizadeh9480.laravel-extra-intellisense)
+- [Laravel Blade Snippets](https://marketplace.visualstudio.com/items?itemName=onecentlin.laravel-blade)
+- [Laravel-goto-controller](https://marketplace.visualstudio.com/items?itemName=stef-k.laravel-goto-controller)
+- [Laravel goto view](https://marketplace.visualstudio.com/items?itemName=codingyu.laravel-goto-view)
+- [laravel-blade](https://marketplace.visualstudio.com/items?itemName=cjhowe7.laravel-blade)
+- [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+- [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
+- [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
+- [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+- [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
+- [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+- [Markdown Emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji)
+
+### Fonte
+
+Move o diretório da fonte JetBrains Mono para `~/.fonts`
+
+```
+mv ~/Downloads/ubuntu_workspace/src/JetBrainsMono-1.0.3 ~/.fonts/JetBrainsMono-1.0.3
+```
+
+No VS Code acessar o arquivo `settings.json` [Ctrl + ,] e adicionar o contedo abaixo.
+
+```
+"editor.fontFamily": "JetBrains Mono",
+"editor.fontSize": 14,
+"editor.fontLigatures": true
+```
