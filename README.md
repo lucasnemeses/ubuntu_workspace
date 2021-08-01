@@ -2,9 +2,7 @@
 
 Parametrizações de ambiente de desenvolvimento PHP no Ubuntu 20.04
 
-<br>
-
-<img src = "src/print.png" style = "max-width: 700px; margin: 0 auto;">
+![print](src/print.png)
 
 <br>
 
@@ -126,6 +124,13 @@ alias app="cd ~/app/"
 alias amt="sudo service apache2 start && service mysql start"
 alias amr="sudo service apache2 restart && service mysql restart"
 alias ams="sudo service apache2 stop && service mysql stop"
+alias sail='bash vendor/bin/sail'
+alias dockersail='docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v $(pwd):/opt \
+    -w /opt \
+    laravelsail/php80-composer:latest \
+    composer install --ignore-platform-reqs'
 ```
 
 <br>
