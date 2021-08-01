@@ -32,7 +32,15 @@ sudo snap install code --classic
 
 <br>
 
-## :large_blue_circle: OH MY ZSH
+## :large_blue_circle: DOCKER
+
+Seguir o tutorial do DigitalOcean para instalação do Docker e Docker Composer.
+- [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-pt)
+- [Docker Compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-pt)
+
+<br>
+
+## :green_circle: OH MY ZSH
 
 ### Instalando Zsh:
 
@@ -135,7 +143,7 @@ alias dockersail='docker run --rm \
 
 <br>
 
-## :green_circle: ASDF
+## :yellow_circle: ASDF
 
 CLI gerenciador de versões de multiplas linguagens.
 Para instalar o asdf no ohmyzsh basta adicionar o `plugins=(asdf)` abaixo de `plugins=(git)` e clonar o repositório do asdf.
@@ -186,7 +194,7 @@ asdf plugin-list
 
 <br>
 
-## :yellow_circle: GNOME
+## :orange_circle: GNOME
 
 ### Extensões
 
@@ -206,7 +214,7 @@ gnome-tweaks
 
 <br>
 
-## :orange_circle: VS CODE
+## :red_circle: VS CODE
 
 ### Extensões
 
