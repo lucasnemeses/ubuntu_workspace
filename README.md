@@ -8,6 +8,13 @@ Parametrizações de ambiente de desenvolvimento PHP no Ubuntu 20.04
 
 ## :purple_circle: DEV TOOLS
 
+**apt**
+
+```
+sudo apt update
+sudo apt install -y git curl mysql-server apache2 zsh unzip filezilla chrome-gnome-shell gnome-tweak-tool dconf-editor tableplus
+```
+
 **dpkg**
 
 ```
@@ -15,13 +22,6 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 wget -O - -q http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add - 
 sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian tableplus main"
-```
-
-**apt**
-
-```
-sudo apt update
-sudo apt install -y git curl mysql-server apache2 zsh unzip filezilla chrome-gnome-shell gnome-tweak-tool dconf-editor tableplus
 ```
 
 **snap**
