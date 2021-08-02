@@ -194,7 +194,18 @@ asdf plugin-list
 
 <br>
 
-## :orange_circle: GNOME
+## :orange_circle: APP FOLDER
+
+O diretório de projetos será `~/app`. Dentro dele será criado um link simbólico para `/var/www/html`, diretório raiz do localhost apache, para projeto que não estejam parametrizados com docker.
+
+```
+mkdir ~/app
+ln -s /var/www/html  ~/app/apache
+```
+
+<br>
+
+## :red_circle: GNOME
 
 ### Extensões
 
@@ -214,7 +225,7 @@ gnome-tweaks
 
 <br>
 
-## :red_circle: VS CODE
+## :brown_circle: VS CODE
 
 ### Extensões
 
