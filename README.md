@@ -42,9 +42,7 @@ Seguir o tutorial do DigitalOcean para instalação do Docker e Docker Composer.
 
 ## :green_circle: OH MY ZSH
 
-### Instalando Zsh:
-
-Defir Zsh como shell padrão:
+### Defir Zsh como shell padrão:
 
 ```shell
 chsh -s $(which zsh)
@@ -129,9 +127,9 @@ nano ~/.zshrc
 
 ```
 alias app="cd ~/app/"
-alias amt="sudo service apache2 start && service mysql start"
-alias amr="sudo service apache2 restart && service mysql restart"
-alias ams="sudo service apache2 stop && service mysql stop"
+alias dcup="docker-compose up -d"
+alias dcdw="docker-compose down"
+alias dcbs="docker-compose exec app bash"
 alias sail='bash vendor/bin/sail'
 alias dockersail='docker run --rm \
     -u "$(id -u):$(id -g)" \
@@ -143,69 +141,7 @@ alias dockersail='docker run --rm \
 
 <br>
 
-## :yellow_circle: ASDF
-
-CLI gerenciador de versões de multiplas linguagens.
-Para instalar o asdf no ohmyzsh basta adicionar o `plugins=(asdf)` abaixo de `plugins=(git)` e clonar o repositório do asdf.
-
-```
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-```
-
-Plugin de versões do php e nodejs:
-
-```
-asdf plugin-add php https://github.com/asdf-community/asdf-php.git
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-```
-
-Lista as versões de php e nodejs disponiveis:
-
-```
-asdf list-all php
-asdf list-all nodejs
-```
-
-Instalação de uma versão do php (já com composer) e nodejs:
-
-```
-asdf install php 7.4.22
-asdf install nodejs 16.5.0
-```
-
-Extensões do php:
-
-```
-sudo apt install -y openssl php-common php-curl php-json php-mbstring php-mysql php-xml php-zip libapache2-mod-php php-mysql php-cgi php-gd
-```
-
-Acesso global:
-
-```
-asdf global php 7.4.22
-asdf global nodejs 16.5.0
-```
-
-Lista os plugins instalados:
-
-```
-asdf plugin-list
-```
-
-<br>
-
-## :orange_circle: APP FOLDER
-
-O diretório de projetos será `~/app`. Dentro dele será criado um link simbólico para `/var/www/html`, diretório raiz do localhost apache, para projeto que não estejam parametrizados com docker.
-
-```
-mkdir ~/app
-ln -s /var/www/html  ~/app/apache
-```
-
-<br>
-
-## :red_circle: GNOME
+## :yellow_circle: GNOME
 
 ### Extensões
 
@@ -225,7 +161,7 @@ gnome-tweaks
 
 <br>
 
-## :brown_circle: VS CODE
+## :red_circle: VS CODE
 
 ### Extensões
 
