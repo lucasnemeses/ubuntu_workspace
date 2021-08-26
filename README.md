@@ -1,6 +1,6 @@
 # :rocket: Ubuntu Workspace
 
-Parametrizações de ambiente de desenvolvimento PHP no Ubuntu 20.04
+Parametrizações de ambiente de desenvolvimento no Ubuntu 20.04
 
 ![print](src/print.png)
 
@@ -12,7 +12,7 @@ Parametrizações de ambiente de desenvolvimento PHP no Ubuntu 20.04
 
 ```
 sudo apt update
-sudo apt install -y git curl mysql-server apache2 zsh unzip filezilla chrome-gnome-shell gnome-tweak-tool dconf-editor tableplus
+sudo apt install -y git curl zsh unzip filezilla chrome-gnome-shell gnome-tweak-tool dconf-editor tableplus
 ```
 
 **dpkg**
