@@ -33,7 +33,7 @@ sudo snap install code --classic
 ## :large_blue_circle: DOCKER
 
 Seguir o tutorial do DigitalOcean para instalação do Docker e Docker Composer.
-- [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-pt)
+- [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-pt)
 - [Docker Compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-pt)
 
 <br>
