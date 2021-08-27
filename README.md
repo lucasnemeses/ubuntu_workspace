@@ -84,7 +84,7 @@ Comentar a linha `ZSH_THEME="robbyrussell"` e adicionar embaixo:
 ```
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator user dir dir_writable vcs newline)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir dir_writable vcs newline)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
 ```
 
