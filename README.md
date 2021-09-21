@@ -163,20 +163,28 @@ gnome-tweaks
 
 ### Extensões
 
-- [Dracula Official](https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula)
-- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
-- [Laravel Extra Intellisense](https://marketplace.visualstudio.com/items?itemName=amiralizadeh9480.laravel-extra-intellisense)
-- [Laravel Blade Snippets](https://marketplace.visualstudio.com/items?itemName=onecentlin.laravel-blade)
-- [Laravel-goto-controller](https://marketplace.visualstudio.com/items?itemName=stef-k.laravel-goto-controller)
-- [Laravel goto view](https://marketplace.visualstudio.com/items?itemName=codingyu.laravel-goto-view)
-- [laravel-blade](https://marketplace.visualstudio.com/items?itemName=cjhowe7.laravel-blade)
-- [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
-- [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
-- [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
-- [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
-- [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
-- [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
-- [Markdown Emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji)
+- Dracula Official
+- Material Icon Theme
+- PHP Intelephense
+- Laravel Extra Intellisense
+- Laravel Blade Snippets
+- Laravel-goto-controller
+- Laravel goto view
+- laravel-blade
+- Path Intellisense
+- DotENV
+- IntelliSense for CSS class names in HTML
+- Auto Rename Tag
+- Auto Close Tag
+- markdownlint
+- Markdown Emoji
+- CodeSnap
+- Thunder Client
+- Import Cost
+- Prettier
+- Bracket Pair Colorizer 2
+- GitLens — Git supercharged
+- Inline Parameters for VSCode
 
 ### Fonte
 
