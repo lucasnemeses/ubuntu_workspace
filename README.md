@@ -197,7 +197,7 @@ gnome-tweaks
 Move o diretório da fonte JetBrains Mono para `~/.fonts`
 
 ```
-mv ~/Downloads/ubuntu_workspace/src/JetBrainsMono-1.0.3 ~/.fonts/JetBrainsMono-1.0.3
+mv ~/ubuntu_workspace/src/JetBrainsMono-1.0.3 ~/.fonts/JetBrainsMono-1.0.3
 ```
 
 No VS Code acessar o arquivo `settings.json` [Ctrl + ,] e adicionar o contedo abaixo.
