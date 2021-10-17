@@ -128,13 +128,6 @@ alias app="cd ~/app/"
 alias dcup="docker-compose up -d"
 alias dcdw="docker-compose down"
 alias dcbs="docker-compose exec app bash"
-alias sail='bash vendor/bin/sail'
-alias dockersail='docker run --rm \
-    -u "$(id -u):$(id -g)" \
-    -v $(pwd):/opt \
-    -w /opt \
-    laravelsail/php80-composer:latest \
-    composer install --ignore-platform-reqs'
 ```
 
 ### Config Docker
@@ -157,12 +150,13 @@ export WWWGROUP=${WWWGROUP:-$(id -g)}
 
 ### Tema
 
-Mover o diretório do tema para `~/.themes` e ao final realizar a troca do tema via gnome-tweaks.
+Clonar esse repositório e mover o diretório do tema para `~/.themes` e ao final realizar a troca do tema via gnome-tweaks.
 
 ```shell
-sudo add-apt-repository universe
+git clone https://github.com/lucasnemeses/ubuntu_workspace.git
 mkdir ~/.themes/
-mv ~/Downloads/ubuntu_workspace/src/Mojave-dark-solid ~/.themes/Mojave-dark-solid
+mv ~/ubuntu_workspace/src/Mojave-dark-solid ~/.themes/Mojave-dark-solid
+sudo add-apt-repository universe
 gnome-tweaks
 ```
 
