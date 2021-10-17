@@ -137,6 +137,15 @@ alias dockersail='docker run --rm \
     composer install --ignore-platform-reqs'
 ```
 
+### Config Docker
+
+Adicionar no arquivo `~/.zshrc` o conteúdo abaixo após `export ZSH=$HOME/.oh-my-zsh`.
+
+```
+export WWWUSER=${WWWUSER:-$UID}
+export WWWGROUP=${WWWGROUP:-$(id -g)}
+```
+
 <br>
 
 ## :yellow_circle: GNOME
@@ -163,28 +172,31 @@ gnome-tweaks
 
 ### Extensões
 
-- Dracula Official
-- Material Icon Theme
-- PHP Intelephense
-- Laravel Extra Intellisense
-- Laravel Blade Snippets
-- Laravel-goto-controller
-- Laravel goto view
-- laravel-blade
-- Path Intellisense
-- DotENV
-- IntelliSense for CSS class names in HTML
-- Auto Rename Tag
 - Auto Close Tag
-- markdownlint
-- Markdown Emoji
-- CodeSnap
-- Thunder Client
-- Import Cost
-- Prettier
+- Auto Rename Tag
 - Bracket Pair Colorizer 2
+- CodeSnap
+- Docker
+- Dracula Official
+- ENV
+- Git Graph
+- GitHub Pull Requests and Issues
 - GitLens — Git supercharged
 - Inline Parameters for VSCode
+- IntelliSense for CSS class names in HTML
+- Laravel Blade formatter
+- Laravel Blade Spacer
+- Laravel Extension Pack
+- Laravel Helpers
+- laravel-blade
+- Live Share
+- Markdown Emoji
+- markdownlint
+- Material Icon Theme
+- Path Intellisense
+- Portuguese (Brazil) Language Pack for Visual Studio Code
+- Remote - Containers
+- Tinkerwell
 
 ### Fonte
 
