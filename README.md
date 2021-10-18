@@ -125,9 +125,10 @@ nano ~/.zshrc
 
 ```
 alias app="cd ~/app/"
-alias dcup="docker-compose up -d"
-alias dcdw="docker-compose down"
-alias dcbs="docker-compose exec app bash"
+alias docker-up="docker-compose up -d"
+alias docker-down="docker-compose down"
+alias docker-bash="docker-compose exec app bash"
+alias docker-remove="docker rm -f $(docker ps -a -q)"
 ```
 
 ### Config Docker
