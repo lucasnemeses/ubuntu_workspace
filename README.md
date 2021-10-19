@@ -128,7 +128,7 @@ alias app="cd ~/app/"
 alias docker-up="docker-compose up -d"
 alias docker-down="docker-compose down"
 alias docker-bash="docker-compose exec app bash"
-alias docker-remove="docker rm -f $(docker ps -a -q)"
+alias docker-remove="docker rm -f $(docker ps --format '{{.ID}}')"
 ```
 
 ### Config Docker
