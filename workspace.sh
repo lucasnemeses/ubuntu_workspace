@@ -28,7 +28,10 @@ mkdir ~/.fonts/MesloLG &&
 
 ## Instalando a fonte JetBrainsMono ##
 wget -P ~/.fonts/JetBrainsMono https://download.jetbrains.com/fonts/JetBrainsMono-2.242.zip &&
-unzip ~/.fonts/JetBrainsMono/JetBrainsMono-2.242.zip &&
+cd ~/.fonts/JetBrainsMono &&
+unzip JetBrainsMono-2.242.zip &&
+rm JetBrainsMono-2.242.zip &&
+cd ~/Downloads/ubuntu_workspace &&
 
 ## Instalando tema Mojave no Gnome ##
 mv src/Mojave-dark-solid ~/.themes/Mojave-dark-solid &&
