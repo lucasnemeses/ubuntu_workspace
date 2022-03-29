@@ -43,7 +43,7 @@ chmod 777 oh-my-zsh.sh &&
 Instalando tema Dracula ao terminal:
 ```
 git clone https://github.com/dracula/gnome-terminal &&
-gnome-terminal/./install.sh &&
+gnome-terminal/./install.sh
 ```
 
 ## Gnome
