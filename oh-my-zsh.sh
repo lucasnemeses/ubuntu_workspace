@@ -1,17 +1,4 @@
 #!/bin/bash
-
-echo "🖥️ Instalando Oh My ZSH" &&
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &&
-echo "✅️ Oh My ZSH instalado" &&
-
-echo "🎈️ Instalando Powerlevel10K" &&
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k &&
-echo "✅️ Powerlevel10K instalado" &&
-
-echo "🎉️ Alterando tema zsh para Powelevel10K" &&
-sed -i 's+ZSH_THEME="robbyrussell"+ZSH_THEME="powerlevel10k/powerlevel10k"\nPOWERLEVEL10K_LEFT_PROMPT_ELEMENTS=(user dir dir_writable vcs newline)\nPOWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status)+g' ~/.zshrc &&
-echo "✅️ Tema zsh alterado para Powelevel10K" &&
-
 echo "📥️ Baixando plugins ZSH" &&
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions &&
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting &&

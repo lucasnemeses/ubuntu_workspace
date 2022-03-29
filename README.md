@@ -40,10 +40,15 @@ chmod 777 oh-my-zsh.sh &&
 ./oh-my-zsh.sh
 ```
 
-Instalando tema Dracula ao terminal:
+Instalar tema Powerlevel10K:
+```
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+Instalar paleta de cores Dracula:
 ```
 git clone https://github.com/dracula/gnome-terminal &&
-gnome-terminal/./install.sh &&
+gnome-terminal/./install.sh
 ```
 
 ## Gnome
@@ -52,7 +57,6 @@ gnome-terminal/./install.sh &&
 - [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
 
 ### Tema
-
 Acesse o gnome-tweaks e altere o tema para Mojave:
 ```
 gnome-tweaks
