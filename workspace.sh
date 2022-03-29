@@ -1,44 +1,50 @@
 #!/bin/bash
 
-## Removendo travas eventuais do apt ##
+echo "💬️ Removendo eventuais travas do apt" &&
 sudo rm /var/lib/dpkg/lock-frontend ; sudo rm /var/cache/apt/archives/lock ;
+echo "✅️ Eventuais travas do apt removidas" &&
 
-## Atualizando o repositório ##
+echo "💬️ Atualizando o repositório" &&
 sudo apt update &&
+echo "✅️ Repositório atualizado" &&
 
-## Instalando pacotes e programas do repositório deb do Ubuntu ##
+echo "💬️ Instalando pacotes e programas" &&
 sudo apt install wget zsh unzip docker docker-compose filezilla chrome-gnome-shell gnome-tweak-tool dconf-editor build-essential -y &&
+echo "✅️ Pacotes e programas Instalados" &&
 
-## Instalando Google Chrome ###
+echo "💬️ Instalando Google Chrome" &&
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
 sudo dpkg -i google-chrome-stable_current_amd64.deb &&
+echo "✅️ Google Chrome instalado" &&
 
-## Instalando pacotes Snap ##
+echo "💬️ Instalando pacotes Snap" &&
 sudo snap install code --classic &&
 sudo snap install beekeeper-studio &&
 sudo snap install insomnia &&
+echo "✅️ Pacotes Snap instalados" &&
 
-## Executando o comando Docker sem sudo ##
-sudo usermod -aG docker ${USER} &&
-
-## Criando diretórios ##
+echo "💬️ Criando diretórios" &&
 mkdir ~/app &&
 mkdir ~/.themes/ &&
 mkdir ~/.fonts/MesloLG &&
+echo "✅️ Diretórios criando" &&
 
-## Instalando a fonte JetBrainsMono ##
+echo "💬️ Instalando a fonte JetBrainsMono" &&
 wget -P ~/.fonts/JetBrainsMono https://download.jetbrains.com/fonts/JetBrainsMono-2.242.zip &&
 cd ~/.fonts/JetBrainsMono &&
 unzip JetBrainsMono-2.242.zip &&
 rm JetBrainsMono-2.242.zip &&
 cd ~/Downloads/ubuntu_workspace &&
+echo "✅️ Fonte JetBrainsMono instalado" &&
 
-## Instalando tema Mojave no Gnome ##
+echo "💬️ Instalando tema Mojave no Gnome" &&
 mv src/Mojave-dark-solid ~/.themes/Mojave-dark-solid &&
 sudo add-apt-repository universe &&
+echo "✅️ Tema Mojave no Gnome instalado" &&
 
-## Alterando bash para zsh ##
+echo "💬️ Alterando bash para zsh" &&
 chsh -s /bin/zsh &&
+echo "✅️ bash alterado para zsh" &&
 
-echo "✅️ Finalizado" &&
+echo "😎️ Finalizado" &&
 sudo reboot
