@@ -28,11 +28,22 @@ chmod 777 workspace.sh
 ./workspace.sh
 ```
 
-O reiniar, executar o script de instalação do Oh My ZSH:
+Instalar Oh My ZSH:
+```
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Executar o script de configuração do Oh My ZSH:
 ```
 cd ~/Downloads/ubuntu_workspace &&
 chmod 777 oh-my-zsh.sh &&
 ./oh-my-zsh.sh
+```
+
+Instalando tema Dracula ao terminal:
+```
+git clone https://github.com/dracula/gnome-terminal &&
+gnome-terminal/./install.sh &&
 ```
 
 ## Gnome
